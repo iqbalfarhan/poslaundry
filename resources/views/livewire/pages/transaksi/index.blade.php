@@ -9,10 +9,10 @@
             <button @class(['btn btn-sm', 'btn-primary' => $status == 'proses']) wire:click="$set('status', 'proses')">Proses</button>
             <button @class(['btn btn-sm', 'btn-primary' => $status == 'daftar']) wire:click="$set('status', 'daftar')">Daftar</button>
         </label>
-        <button class="btn input-bordered">
+        <a href="{{ route('transaksi.create') }}" class="btn input-bordered" wire:navigate>
             <x-tabler-calendar class="icon-5" />
             Buat transaksi
-        </button>
+        </a>
     </div>
 
     <div class="grid md:grid-cols-3 gap-5">

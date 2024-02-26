@@ -3,8 +3,10 @@
 namespace App\Livewire\Pages;
 
 use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
+#[Title('Edit Profile')]
 class Profile extends Component
 {
     public $name;

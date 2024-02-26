@@ -15,11 +15,10 @@
             <div class="drawer lg:drawer-open">
                 <input type="checkbox" id="drawer" class="drawer-toggle">
                 <div class="drawer-content">
-                    @livewire('partial.navbar')
-                    <div class="page-wrapper mb-12">
-                        @livewire('partial.header', [
-                            'title' => $title ?? config('app.name'),
-                        ])
+                    @livewire('partial.navbar', [
+                        'title' => $title ?? config('app.name'),
+                    ])
+                    <div class="page-wrapper">
                         {{ $slot }}
                     </div>
                     @livewire('partial.footer')
@@ -40,5 +39,7 @@
             </div>
         @endguest
     </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </html>

@@ -1,30 +1,30 @@
 <?php
 
-namespace App\Livewire\Pages\Customer;
+namespace App\Livewire\Pages\Paket;
 
-use App\Livewire\Forms\CustomerForm;
-use App\Models\Customer;
+use App\Livewire\Forms\PaketForm;
+use App\Models\Paket;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
 class Actions extends Component
 {
     public $show = false;
-    public ?CustomerForm $form;
+    public ?PaketForm $form;
 
-    #[On('editCustomer')]
-    public function editCustomer(Customer $customer){
+    #[On('editPaket')]
+    public function editPaket(Paket $paket){
         $this->show = true;
-        $this->form->setCustomer($customer);
+        $this->form->setPaket($paket);
     }
 
-    #[On('createCustomer')]
-    public function createCustomer(){
+    #[On('createPaket')]
+    public function createPaket(){
         $this->show = true;
     }
 
     public function simpan(){
-        if (isset($this->form->customer)) {
+        if ($this->form->paket) {
             $this->form->update();
         }
         else{
@@ -35,9 +35,9 @@ class Actions extends Component
         $this->dispatch('reload');
     }
 
-    #[On('deleteCustomer')]
-    public function deleteCustomer(Customer $customer){
-        $customer->delete();
+    #[On('deletePaket')]
+    public function deletePaket(Paket $paket){
+        $paket->delete();
         $this->dispatch('reload');
     }
 
@@ -48,6 +48,6 @@ class Actions extends Component
 
     public function render()
     {
-        return view('livewire.pages.customer.actions');
+        return view('livewire.pages.paket.actions');
     }
 }

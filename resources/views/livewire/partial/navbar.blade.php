@@ -1,11 +1,11 @@
 <div class="navbar bg-base-100 border-b">
     <div class="navbar-start">
         <label for="drawer" class="btn btn-ghost btn-circle">
-            <x-tabler-menu class="icon-5" />
+            <x-tabler-menu-2 class="icon-5" />
         </label>
     </div>
     <div class="navbar-center">
-        <a class="btn btn-ghost text-xl">{{ config('app.name') }}</a>
+        <span class="font-semibold text-xl">{{ $title }}</span>
     </div>
     <div class="navbar-end">
         <button class="btn btn-ghost btn-circle">

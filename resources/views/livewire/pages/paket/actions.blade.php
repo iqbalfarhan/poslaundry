@@ -1,24 +1,20 @@
 <div>
     <input type="checkbox" id="formCustomer" class="modal-toggle" wire:model.live="show" />
     <div class="modal" role="dialog">
-        <form class="modal-box space-y-8 max-w-sm" wire:submit="simpan">
+        <form class="modal-box space-y-8" wire:submit="simpan">
 
             <div class="divider">
-                <h3 class="font-semibold text-xl">Data customer</h3>
+                <h3 class="font-semibold text-xl">Data paket</h3>
             </div>
 
             <div class="space-y-2">
                 <label class="input input-bordered flex items-center gap-2">
-                    <x-tabler-user class="icon-5" />
-                    <input type="text" class="grow" wire:model="form.name" placeholder="Nama customer">
+                    <x-tabler-box class="icon-5" />
+                    <input type="text" class="grow" wire:model="form.name" placeholder="Nama paket">
                 </label>
                 <label class="input input-bordered flex items-center gap-2">
-                    <x-tabler-phone class="icon-5" />
-                    <input type="text" class="grow" wire:model="form.telp" placeholder="Nomor telepon">
-                </label>
-                <label class="input input-bordered flex items-center gap-2">
-                    <x-tabler-map-pin class="icon-5" />
-                    <input type="text" class="grow" wire:model="form.alamat" placeholder="Alamat customer">
+                    <x-tabler-currency-dollar class="icon-5" />
+                    <input type="text" class="grow" wire:model="form.harga" placeholder="Harga paket">
                 </label>
             </div>
             <div class="modal-action justify-between">

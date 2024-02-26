@@ -20,10 +20,15 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function(){
     Route::get('home', \App\Livewire\Pages\Home::class)->name('home');
     Route::get('profile', \App\Livewire\Pages\Profile::class)->name('profile');
+    Route::get('dokumentasi', \App\Livewire\Pages\Dokumentasi::class)->name('dokumentasi');
+
     Route::get('transaksi', \App\Livewire\Pages\Transaksi\Index::class)->name('transaksi.index');
+    Route::get('transaksi/create', \App\Livewire\Pages\Transaksi\Create::class)->name('transaksi.create');
 
     Route::get('customer', \App\Livewire\Pages\Customer\Index::class)->name('customer.index');
     Route::get('customer/{customer}', \App\Livewire\Pages\Customer\Show::class)->name('customer.show');
+
+    Route::get('paket', \App\Livewire\Pages\Paket\Index::class)->name('paket.index');
 });
 
 Route::middleware('guest')->group(function(){
