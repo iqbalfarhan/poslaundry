@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Pages\Transaksi;
 
+use App\Models\Transaksi;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -13,6 +14,8 @@ class Index extends Component
 
     public function render()
     {
-        return view('livewire.pages.transaksi.index');
+        return view('livewire.pages.transaksi.index', [
+            'datas' => Transaksi::get()
+        ]);
     }
 }

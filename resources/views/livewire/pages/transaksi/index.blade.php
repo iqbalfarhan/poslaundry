@@ -16,12 +16,9 @@
     </div>
 
     <div class="grid md:grid-cols-3 gap-5">
-        @livewire('pages.transaksi.card')
-        @livewire('pages.transaksi.card')
-        @livewire('pages.transaksi.card')
-        @livewire('pages.transaksi.card')
-        @livewire('pages.transaksi.card')
-        @livewire('pages.transaksi.card')
+        @foreach ($datas as $data)
+            @livewire('pages.transaksi.card', ['data' => $data])
+        @endforeach
     </div>
 
     @livewire('pages.transaksi.show')

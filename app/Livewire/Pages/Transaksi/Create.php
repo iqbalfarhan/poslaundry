@@ -57,6 +57,16 @@ class Create extends Component
 
         $valid['total_harga'] = $this->totalHarga();
 
+        foreach ($this->items as $key => $item) {
+            $paket = Paket::find($item['paket_id']);
+            $valid['items'][$key] = [
+                'name' => $paket->name,
+                'harga' => $paket->harga,
+                'qty' => $item['qty'],
+                'subtotal' => $item['qty'] * $paket->harga,
+            ];
+        }
+
         dd($valid);
     }
 
