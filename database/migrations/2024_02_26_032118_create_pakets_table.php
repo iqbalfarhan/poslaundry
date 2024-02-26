@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('harga');
             $table->boolean('show')->default(true);
+            $table->string('satuan', 20)->nullable();
             $table->timestamps();
         });
     }

@@ -16,6 +16,10 @@
                     <x-tabler-currency-dollar class="icon-5" />
                     <input type="text" class="grow" wire:model="form.harga" placeholder="Harga paket">
                 </label>
+                <label class="input input-bordered flex items-center gap-2">
+                    <x-tabler-weight class="icon-5" />
+                    <input type="text" class="grow" wire:model="form.satuan" placeholder="Satuan paket">
+                </label>
             </div>
             <div class="modal-action justify-between">
                 <button type="button" wire:click="close" class="btn">Close</button>

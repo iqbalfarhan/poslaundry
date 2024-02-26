@@ -10,18 +10,21 @@ class PaketForm extends Form
 {
     public $name = "";
     public $harga = "";
+    public $satuan = "";
     public ?Paket $paket;
 
     public function setPaket(Paket $paket){
         $this->paket = $paket;
         $this->name = $paket->name;
         $this->harga = $paket->harga;
+        $this->satuan = $paket->satuan;
     }
 
     public function store(){
         $valid = $this->validate([
             'name' => 'required',
             'harga' => 'required',
+            'satuan' => '',
         ]);
 
         Paket::create($valid);
@@ -32,6 +35,7 @@ class PaketForm extends Form
         $valid = $this->validate([
             'name' => 'required',
             'harga' => 'required',
+            'satuan' => '',
         ]);
 
         $this->paket->update($valid);

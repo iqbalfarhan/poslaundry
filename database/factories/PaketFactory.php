@@ -17,9 +17,10 @@ class PaketFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->word(),
+            'name' => fake()->sentence(4),
             'harga' => fake()->randomNumber(5),
             'show' => fake()->boolean(),
+            'satuan' => fake()->word(),
         ];
     }
 }

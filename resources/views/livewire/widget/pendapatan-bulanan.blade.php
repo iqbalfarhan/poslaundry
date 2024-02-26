@@ -24,7 +24,7 @@
                 datasets: [{
                     data: values,
                     fill: true,
-                    tension: 0.3,
+                    tension: 0.1,
                     pointStyle: false,
                     showLine: true
                 }]

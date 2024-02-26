@@ -12,5 +12,11 @@ class Paket extends Model
     protected $fillable = [
         'name',
         'harga',
+        'show',
+        'satuan',
     ];
+
+    public function getRupiahAttribute(){
+        return number_format($this->harga, 0, ',', '.');
+    }
 }

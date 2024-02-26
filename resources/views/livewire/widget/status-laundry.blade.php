@@ -1,9 +1,9 @@
 <div class="card card-compact border-2 aspect-square overflow-hidden">
-    <div class="flex flex-col justify-between h-full">
-        <div class="card-body">
-            <div class="card-title">Status laundry</div>
-            <div class="w-64 mx-auto">
-                <canvas id="statusLaundry" class="w-32"></canvas>
+    <div class="card-body">
+        <div class="card-title">Status laundry</div>
+        <div class="grid place-content-center">
+            <div class="w-64 h-full aspect-square">
+                <canvas id="statusLaundry"></canvas>
             </div>
         </div>
     </div>
@@ -24,7 +24,6 @@
                 datasets: [{
                     data: values,
                     fill: true,
-                    tension: 0.3,
                     pointStyle: 'circle',
                     borderWidth: 3
                 }]

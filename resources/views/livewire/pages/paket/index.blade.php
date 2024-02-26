@@ -9,12 +9,13 @@
         </button>
     </div>
 
-    <div class="table-wrapper max-w-2xl mx-auto">
+    <div class="table-wrapper">
         <table class="table">
             <thead>
                 <th>No</th>
                 <th>Nama paket</th>
                 <th>Harga paket</th>
+                <th>Satuan</th>
                 <th>Tampilkan</th>
                 <th class="text-center">Action</th>
             </thead>
@@ -23,6 +24,7 @@
                     <td>{{ $data->id }}</td>
                     <td>{{ $data->name }}</td>
                     <td>Rp. {{ number_format($data->harga, 0, ',', '.') }}</td>
+                    <td>{{ $data->satuan }}</td>
                     <td>
                         <input type="checkbox" class="toggle toggle-primary toggle-sm" @checked($data->show)>
                     </td>
