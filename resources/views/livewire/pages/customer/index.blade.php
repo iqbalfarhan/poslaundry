@@ -9,6 +9,12 @@
         </button>
     </div>
 
+    {{-- <div class="grid grid-cols-2 gap-6">
+        @foreach ($datas as $data)
+            @livewire('pages.customer.card', ['customer' => $data], key($data->id))
+        @endforeach
+    </div> --}}
+
     <div class="table-wrapper">
         <table class="table">
             <thead>
@@ -44,5 +50,6 @@
             @endforeach
         </table>
     </div>
+
     @livewire('pages.customer.actions')
 </div>

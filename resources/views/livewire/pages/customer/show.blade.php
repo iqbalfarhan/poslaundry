@@ -1,5 +1,5 @@
 <div class="space-y-6">
-    @livewire('pages.customer.card')
+    @livewire('pages.customer.card', ['customer' => $customer])
 
     <div class="flex justify-between">
         <input type="date" class="input input-bordered" placeholder="Pencarian">

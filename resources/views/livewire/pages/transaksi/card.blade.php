@@ -13,7 +13,7 @@
             </div>
         </div>
     </div>
-    <div class="card-body bg-base-200">
+    <div class="card-body bg-base-200 rounded-b-xl">
         <div class="flex justify-between items-center text-xs">
             <div>{{ $transaksi->customer->name }}</div>
             <div>{{ $transaksi->tanggal_order->format('d M Y') }}</div>
