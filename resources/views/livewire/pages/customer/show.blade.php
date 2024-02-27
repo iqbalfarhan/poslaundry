@@ -1,8 +1,5 @@
 <div class="space-y-6">
-    <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quis voluptas ipsum ipsam laboriosam eveniet
-        repudiandae provident. Fugit, illo unde facere ipsam architecto nihil quaerat hic. Ipsa at distinctio facere!
-    </div>
+    @livewire('pages.customer.card')
 
     <div class="flex justify-between">
         <input type="date" class="input input-bordered" placeholder="Pencarian">
