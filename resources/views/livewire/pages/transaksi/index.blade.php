@@ -17,7 +17,7 @@
 
     <div class="grid md:grid-cols-3 gap-5">
         @foreach ($datas as $data)
-            @livewire('pages.transaksi.card', ['data' => $data])
+            @livewire('pages.transaksi.card', ['data' => $data], key($data->id))
         @endforeach
     </div>
 

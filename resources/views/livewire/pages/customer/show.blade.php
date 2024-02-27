@@ -9,11 +9,8 @@
     </div>
 
     <div class="grid md:grid-cols-3 gap-5">
-        @livewire('pages.transaksi.card')
-        @livewire('pages.transaksi.card')
-        @livewire('pages.transaksi.card')
-        @livewire('pages.transaksi.card')
-        @livewire('pages.transaksi.card')
-        @livewire('pages.transaksi.card')
+        @foreach ($transaksis as $transaksi)
+            @livewire('pages.transaksi.card', ['data' => $transaksi], key($transaksi->id))
+        @endforeach
     </div>
 </div>

@@ -17,6 +17,8 @@ class Show extends Component
 
     public function render()
     {
-        return view('livewire.pages.customer.show');
+        return view('livewire.pages.customer.show', [
+            'transaksis' => $this->customer->transaksis
+        ]);
     }
 }

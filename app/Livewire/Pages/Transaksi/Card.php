@@ -15,6 +15,8 @@ class Card extends Component
 
     public function render()
     {
-        return view('livewire.pages.transaksi.card');
+        return view('livewire.pages.transaksi.card', [
+            'color' => $this->transaksi->color
+        ]);
     }
 }

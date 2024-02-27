@@ -1,4 +1,4 @@
-<ul class="menu p-4 w-80 min-h-full bg-base-100 text-base-content space-y-4" data-theme="dark">
+<ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content space-y-4 border-r-2" data-theme="aqua">
     <li>
         <h3 class="text-xl font-bold">
             <x-tabler-wash-dry-1 />
@@ -16,7 +16,11 @@
             </li>
             <li>
                 <a href="{{ route('transaksi.index') }}" @class([
-                    'active' => Route::is(['transaksi.index', 'transaksi.create']),
+                    'active' => Route::is([
+                        'transaksi.index',
+                        'transaksi.create',
+                        'transaksi.detail',
+                    ]),
                 ]) wire:navigate>
                     <x-tabler-ticket class="icon-5" />
                     <span>Data Transaksi</span>
@@ -28,7 +32,7 @@
         <h3 class="menu-title">Data master</h3>
         <ul>
             <li>
-                <a href="{{ route('customer.index') }}" @class(['active' => Route::is('customer.index')]) wire:navigate>
+                <a href="{{ route('customer.index') }}" @class(['active' => Route::is(['customer.index', 'customer.show'])]) wire:navigate>
                     <x-tabler-users class="icon-5" />
                     <span>Data Customer</span>
                 </a>
@@ -37,6 +41,12 @@
                 <a href="{{ route('paket.index') }}" @class(['active' => Route::is('paket.index')]) wire:navigate>
                     <x-tabler-box class="icon-5" />
                     <span>Paket Laundry</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('setting.index') }}" @class(['active' => Route::is('setting.index')]) wire:navigate>
+                    <x-tabler-settings class="icon-5" />
+                    <span>Pengaturan aplikasi</span>
                 </a>
             </li>
         </ul>

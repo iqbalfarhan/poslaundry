@@ -9,6 +9,7 @@ class Login extends Component
 {
     public $email = "iqbalfarhan1996@gmail.com";
     public $password = "adminoke";
+    public $pstype = "password";
 
     public function login(){
         $valid = $this->validate([
@@ -22,6 +23,10 @@ class Login extends Component
         else{
             $this->addError('email', 'Please enter a valid email');
         }
+    }
+
+    public function tooglePsType(){
+        $this->pstype = $this->pstype == "password"? "text" : "password";
     }
 
     public function render()

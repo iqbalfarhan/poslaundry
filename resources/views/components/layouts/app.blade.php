@@ -31,10 +31,11 @@
         @endauth
 
         @guest
-            <div class="grid place-content-center h-screen">
-                <div class="card">
-                    <x-tabler-wash-dry-1 class="icon-24 self-center" />
-                    {{ $slot }}
+            <div class="grid place-content-center min-h-screen bg-base-200">
+                <div class="mockup-window bg-base-100 border-2">
+                    <div class="card">
+                        {{ $slot }}
+                    </div>
                 </div>
             </div>
         @endguest

@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    * {
-        font-family: "Fredoka", sans-serif;
+    html {
+        font-family: "Montserrat", sans-serif;
         @apply font-medium;
     }
 
@@ -43,6 +43,11 @@
     }
 
     .table-wrapper {
-        @apply overflow-x-auto whitespace-nowrap border rounded-xl;
+        @apply overflow-x-auto whitespace-nowrap border-2 rounded-xl;
+    }
+
+    .input-bordered,
+    .select-bordered {
+        @apply border-2;
     }
 }

@@ -35,7 +35,6 @@
                                 <x-tabler-edit class="icon-4" />
                             </button>
                             <button class="btn btn-xs btn-square input-bordered"
-                                wire:confirm="Anda yakin akan menghapus paket ini?"
                                 wire:click="$dispatch('deletePaket', {paket:{{ $data->id }}})">
                                 <x-tabler-trash class="icon-4" />
                             </button>

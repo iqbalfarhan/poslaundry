@@ -14,4 +14,8 @@ class Customer extends Model
         'telp',
         'alamat',
     ];
+
+    public function transaksis(){
+        return $this->hasMany(Transaksi::class);
+    }
 }

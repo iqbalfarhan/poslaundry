@@ -4,6 +4,7 @@ namespace App\Livewire\Pages\Transaksi;
 
 use App\Models\Customer;
 use App\Models\Paket;
+use App\Models\Transaksi;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -12,16 +13,7 @@ use Livewire\Component;
 class Create extends Component
 {
     protected $listeners = ['reload' => '$refresh'];
-    public $items = [
-        [
-            'paket_id' => 2,
-            'qty' => 3.45
-        ],
-        [
-            'paket_id' => 8,
-            'qty' => 1
-        ],
-    ];
+    public $items = [];
     public $customer_id;
     public $tanggal;
     public $tanggal_selesai;
@@ -56,6 +48,8 @@ class Create extends Component
         ]);
 
         $valid['total_harga'] = $this->totalHarga();
+        $valid['tanggal_order'] = $this->tanggal;
+        $valid['kode'] = time();
 
         foreach ($this->items as $key => $item) {
             $paket = Paket::find($item['paket_id']);
@@ -67,7 +61,10 @@ class Create extends Component
             ];
         }
 
-        dd($valid);
+        $valid['total'] = $this->totalHarga();
+        $new = Transaksi::create($valid);
+
+        $this->redirect(route('transaksi.detail', $new), navigate:true);
     }
 
     public function render()

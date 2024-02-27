@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
+            $table->string('kode');
             $table->date('tanggal_order');
             $table->date('tanggal_selesai');
             $table->json('items');
             $table->foreignId('customer_id')->constrained()->cascadeOnDelete();
-            $table->float('total');
+            $table->integer('total')->default(0);
             $table->string('status')->default('mengantri');
             $table->timestamps();
         });

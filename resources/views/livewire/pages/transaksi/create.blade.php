@@ -9,8 +9,9 @@
                     </div>
 
                     <div class="join w-full">
-                        <select type="text" class="join-item select select-bordered grow" placeholder="Pilih customer"
-                            wire:model="customer_id">
+                        <select type="text"
+                            class="join-item select select-bordered grow @error('customer_id') select-error @enderror"
+                            placeholder="Pilih customer" wire:model="customer_id">
                             <option value="">Pilih customer</option>
                             @foreach ($customers as $cust_id => $cust_name)
                                 <option value="{{ $cust_id }}">{{ $cust_name }}</option>
@@ -25,25 +26,21 @@
                     <div class="w-full max-w-48">
                         <div>Tanggal input</div>
                     </div>
-                    <label for="" class="input input-bordered flex gap-2 items-center">
-                        <x-tabler-calendar class="icon-5" />
-                        <input type="date" class="grow" wire:model.live="tanggal">
-                    </label>
+                    <input type="date" class="input input-bordered flex gap-2 items-center"
+                        wire:model.live="tanggal">
                 </div>
                 <div class="flex items-center">
                     <div class="w-full max-w-48">
                         <div>Tanggal selesai</div>
                     </div>
-                    <label for="" class="input input-bordered flex gap-2 items-center">
-                        <x-tabler-calendar class="icon-5" />
-                        <input type="date" class="grow" wire:model.live="tanggal_selesai">
-                    </label>
+                    <input type="date" class="input input-bordered flex gap-2 items-center"
+                        wire:model.live="tanggal_selesai">
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="table-wrapper border-2">
+    <div class="table-wrapper border-2 @error('items') border-error @enderror">
         <div class="flex p-4 border-b justify-between items-center">
             <div class="">
                 <h3 class="text-center">Daftar item</h3>

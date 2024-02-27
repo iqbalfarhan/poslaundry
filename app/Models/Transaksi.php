@@ -10,6 +10,7 @@ class Transaksi extends Model
     use HasFactory;
 
     protected $fillable = [
+        'kode',
         'tanggal_order',
         'tanggal_selesai',
         'items',
@@ -19,10 +20,26 @@ class Transaksi extends Model
     ];
 
     public static $statusList = [
-        'mengantri',
-        'dalam pengerjaan',
-        'proses pengemasan',
-        'sudah selesai',
+        'mengantri' => [
+            'illustration' => 'illustration/all_to_list.svg',
+            'color' => 'neutral',
+            'icon' => 'tabler-home'
+        ],
+        'dalam pengerjaan' => [
+            'illustration' => 'illustration/loading_box.svg',
+            'color' => 'success',
+            'icon' => 'tabler-wash-hand'
+        ],
+        'proses pengemasan' => [
+            'illustration' => 'illustration/todo_done.svg',
+            'color' => 'info',
+            'icon' => 'tabler-box'
+        ],
+        'sudah selesai' => [
+            'illustration' => 'illustration/well_done.svg',
+            'color' => 'warning',
+            'icon' => 'tabler-circle-check'
+        ],
     ];
 
     protected $casts = [
@@ -37,5 +54,17 @@ class Transaksi extends Model
 
     public function customer(){
         return $this->belongsTo(Customer::class);
+    }
+
+    public function getIllustrationAttribute(){
+        return self::$statusList[$this->status]['illustration'] ?? "primary";
+    }
+
+    public function getColorAttribute(){
+        return self::$statusList[$this->status]['color'] ?? "primary";
+    }
+
+    public function getIconAttribute(){
+        return self::$statusList[$this->status]['icon'] ?? "primary";
     }
 }

@@ -33,12 +33,13 @@ class TransaksiFactory extends Factory
         ];
 
         return [
+            'kode' => time(),
             'tanggal_order' => $tanggal,
-            'tanggal_selesai' => date('Y-m-d', strtotime($tanggal. '+1 days')),
-            'items' => json_encode($items),
+            'tanggal_selesai' => date('Y-m-d', strtotime($tanggal. '+2 days')),
+            'items' => collect($items),
             'customer_id' => fake()->randomElement(Customer::pluck('id')),
             'total' => $items[0]['subtotal'],
-            'status' => fake()->randomElement(Transaksi::$statusList)
+            'status' => fake()->randomElement(array_keys(Transaksi::$statusList))
         ];
     }
 }

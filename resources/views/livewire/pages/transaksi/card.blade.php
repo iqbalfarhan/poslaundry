@@ -1,20 +1,24 @@
-<div class="card card-compact w-full border-2 border-success/15 bg-success/10">
-    <div class="card-body space-y-4 border-b-2 border-success/15">
+<div class="card card-compact w-full border-2 border-{{ $color }}/15 bg-{{ $color }}/10">
+    <div class="card-body space-y-4 border-b-2 border-{{ $color }}/15">
         <div class="flex justify-between">
-            <div class="font-semibold text-xl flex flex-col items-start">
-                <span>Rp. {{ $transaksi->rupiah }}</span>
-                <small class="text-xs opacity-75">Berat laundry 7.5 Kg</small>
+            <div class="text-xl flex flex-col items-start">
+                <small class="text-xs opacity-50">#{{ $transaksi->kode }}</small>
+                <span class="font-bold">Rp. {{ $transaksi->rupiah }}</span>
+                <small class="text-xs capitalize opacity-70">{{ $transaksi->status }}</small>
             </div>
-            <button class="btn btn-circle btn-ghost bg-success/30" wire:click="$dispatch('detailTransaksi')">
-                <x-tabler-ticket />
-            </button>
-        </div>
-        {{ $transaksi->status }}
-    </div>
-    <div class="card-body">
-        <div class="flex justify-between">
-            <h3>{{ $transaksi->customer->name }}</h3>
-            <div>{{ $transaksi->tanggal_order->format('d F Y') }}</div>
+            <div class="flex gap-2 tooltip" data-tip="{{ $transaksi->status }}">
+                <a href="{{ route('transaksi.detail', $transaksi) }}" class="btn btn-circle bg-{{ $color }}/30">
+                    <x-icon name="{{ $transaksi->icon }}" />
+                </a>
+            </div>
         </div>
     </div>
+    <div class="card-body bg-base-200">
+        <div class="flex justify-between items-center text-xs">
+            <div>{{ $transaksi->customer->name }}</div>
+            <div>{{ $transaksi->tanggal_order->format('d M Y') }}</div>
+        </div>
+    </div>
+
+    @livewire('pages.transaksi.show')
 </div>
