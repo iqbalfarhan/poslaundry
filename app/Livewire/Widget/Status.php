@@ -2,33 +2,30 @@
 
 namespace App\Livewire\Widget;
 
+use App\Models\Transaksi;
 use Livewire\Component;
 
 class Status extends Component
 {
-    public $step = 1;
+    public $step = 0;
+
+    public function increase(){
+        $count = count(Transaksi::$statusList) - 1;
+        if ($this->step != $count) {
+            $this->step++;
+        }
+    }
+
+    public function decrease(){
+        if ($this->step != 0) {
+            $this->step--;
+        }
+    }
 
     public function render()
     {
         return view('livewire.widget.status', [
-            'steps' => [
-                1 => [
-                    'status' => 'Belum selesai',
-                    'image' => 'illustration/loading_box.svg'
-                ],
-                2 => [
-                    'status' => 'Dalam proses',
-                    'image' => 'illustration/add_to_list.svg'
-                ],
-                3 => [
-                    'status' => 'Sudah selesai',
-                    'image' => 'illustration/todo_done.svg'
-                ],
-                4 => [
-                    'status' => 'Sudah selesai',
-                    'image' => 'illustration/well_done.svg'
-                ],
-            ]
+            'steps' => array_values(Transaksi::$statusList)
         ]);
     }
 }

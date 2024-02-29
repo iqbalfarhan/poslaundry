@@ -19,6 +19,8 @@ class Profile extends Component
             'email' =>'required',
             'password' => 'required',
         ]);
+
+        Auth::user()->update($valid);
     }
 
     public function mount(){

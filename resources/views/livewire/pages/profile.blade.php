@@ -1,8 +1,6 @@
 <div class="card w-96 mx-auto">
     <form wire:submit="simpan" class="card-body space-y-4">
-        <div class="divider">
-            <h3 class="card-title">Edit profile {{ config('app.name') }}</h3>
-        </div>
+        <h3 class="card-title">Edit profile {{ config('app.name') }}</h3>
         <div class="space-y-2">
             <label class="input input-bordered flex items-center gap-2">
                 <x-tabler-user-circle class="icon-5" />

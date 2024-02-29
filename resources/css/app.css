@@ -47,6 +47,7 @@
     }
 
     .input-bordered,
+    .textarea-bordered,
     .select-bordered {
         @apply border-2;
     }

@@ -3,7 +3,7 @@
         <div class="flex gap-1">
             <input type="text" class="input input-bordered" placeholder="Pencarian">
         </div>
-        <button class="btn input-bordered" wire:click="$dispatch('createPaket')">
+        <button class="btn input-bordered" wire:click="$dispatch('createPengaturan')">
             <x-tabler-circle-plus class="icon-5" />
             <span>Tambah pengaturan</span>
         </button>
@@ -25,14 +25,14 @@
                         <td>{{ $data->type }}</td>
                         <td>{{ $data->value }}</td>
                         <td>
-                            <div class="flex justify-center gap-1">
-                                <button class="btn btn-xs input-bordered">
-                                    Detail
-                                </button>
-                                <button class="btn btn-xs input-bordered btn-square">
+                            <div class="flex gap-1 justify-center">
+                                <button class="btn btn-xs btn-square input-bordered"
+                                    wire:click="$dispatch('editPengaturan', {pengaturan:{{ $data->id }}})">
                                     <x-tabler-edit class="icon-4" />
                                 </button>
-                                <button class="btn btn-xs input-bordered btn-square">
+                                <button class="btn btn-xs btn-square input-bordered"
+                                    wire:confirm="Anda yakin akan menghapus pengaturan ini?"
+                                    wire:click="$dispatch('deletePengaturan', {pengaturan:{{ $data->id }}})">
                                     <x-tabler-trash class="icon-4" />
                                 </button>
                             </div>
@@ -42,5 +42,7 @@
             </tbody>
         </table>
     </div>
+
+    @livewire('pages.setting.actions')
 
 </div>

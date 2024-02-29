@@ -8,15 +8,15 @@ use Livewire\Component;
 class Card extends Component
 {
     public Transaksi $transaksi;
+    public $color;
 
-    public function mount(Transaksi $data){
+    public function mount(Transaksi $data, $color){
         $this->transaksi = $data;
+        $this->color = $color ?? $this->transaksi->color;
     }
 
     public function render()
     {
-        return view('livewire.pages.transaksi.card', [
-            'color' => $this->transaksi->color
-        ]);
+        return view('livewire.pages.transaksi.card');
     }
 }

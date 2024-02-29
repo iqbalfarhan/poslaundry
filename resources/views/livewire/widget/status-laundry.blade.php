@@ -14,7 +14,7 @@
         const ctx = document.getElementById('statusLaundry');
         const data = $wire.datasets;
 
-        const labels = data.map(item => item.bulan);
+        const labels = data.map(item => item.label);
         const values = data.map(item => item.value);
 
         new Chart(ctx, {
@@ -23,9 +23,6 @@
                 labels: labels,
                 datasets: [{
                     data: values,
-                    fill: true,
-                    pointStyle: 'circle',
-                    borderWidth: 3
                 }]
             },
             options: {

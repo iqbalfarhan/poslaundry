@@ -21,24 +21,36 @@ class Transaksi extends Model
 
     public static $statusList = [
         'mengantri' => [
-            'illustration' => 'illustration/all_to_list.svg',
+            'title' => 'mengantri',
+            'illustration' => 'illustration/add_to_list.svg',
             'color' => 'neutral',
-            'icon' => 'tabler-home'
+            'icon' => 'tabler-list',
+            'as' => 'antri',
+            'keterangan' => 'ini keterangan sebagai detail dari status ini mengantri'
         ],
         'dalam pengerjaan' => [
+            'title' => 'dalam pengerjaan',
             'illustration' => 'illustration/loading_box.svg',
             'color' => 'success',
-            'icon' => 'tabler-wash-hand'
+            'icon' => 'tabler-wash-hand',
+            'as' => 'proses',
+            'keterangan' => 'ini keterangan sebagai detail dari status ini dalam pengerjaan'
         ],
         'proses pengemasan' => [
+            'title' => 'proses pengemasan',
             'illustration' => 'illustration/todo_done.svg',
             'color' => 'info',
-            'icon' => 'tabler-box'
+            'icon' => 'tabler-box',
+            'as' => 'dikemas',
+            'keterangan' => 'ini keterangan sebagai detail dari status ini proses pengemasan'
         ],
         'sudah selesai' => [
+            'title' => 'sudah selesai',
             'illustration' => 'illustration/well_done.svg',
             'color' => 'warning',
-            'icon' => 'tabler-circle-check'
+            'icon' => 'tabler-circle-check',
+            'as' => 'selesai',
+            'keterangan' => 'ini keterangan sebagai detail dari status ini sudah selesai'
         ],
     ];
 

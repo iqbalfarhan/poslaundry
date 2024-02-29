@@ -9,10 +9,7 @@
     </div>
     <div class="navbar-end">
         <button class="btn btn-ghost btn-circle">
-            <div class="indicator">
-                <x-tabler-bell class="icon-5" />
-                <span class="badge badge-xs badge-primary indicator-item"></span>
-            </div>
+            <x-tabler-bell class="icon-5" />
         </button>
     </div>
 </div>

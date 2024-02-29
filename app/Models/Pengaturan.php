@@ -14,4 +14,6 @@ class Pengaturan extends Model
         'type',
         'value',
     ];
+
+    public static $typeList = ['text', 'number', 'boolean', 'file', 'longtext'];
 }

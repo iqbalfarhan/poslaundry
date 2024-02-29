@@ -1,5 +1,5 @@
-<div class="card card-compact w-full border-2 border-{{ $color }}/15 bg-{{ $color }}/10">
-    <div class="card-body space-y-4 border-b-2 border-{{ $color }}/15">
+<div class="card card-compact w-full border-2 border-{{ $color }} bg-{{ $color }}/10">
+    <div class="card-body space-y-4 border-b-2 border-{{ $color }}">
         <div class="flex justify-between">
             <div class="text-xl flex flex-col items-start">
                 <small class="text-xs opacity-50">#{{ $transaksi->kode }}</small>

@@ -1,4 +1,4 @@
-<ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content space-y-4 border-r-2" data-theme="aqua">
+<ul class="menu p-4 w-80 min-h-full bg-base-100 text-base-content space-y-4 border-r-2" data-theme="dark">
     <li>
         <h3 class="text-xl font-bold">
             <x-tabler-wash-dry-1 />
@@ -47,6 +47,12 @@
                 <a href="{{ route('setting.index') }}" @class(['active' => Route::is('setting.index')]) wire:navigate>
                     <x-tabler-settings class="icon-5" />
                     <span>Pengaturan aplikasi</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('user.index') }}" @class(['active' => Route::is(['user.index'])]) wire:navigate>
+                    <x-tabler-users class="icon-5" />
+                    <span>User Management</span>
                 </a>
             </li>
         </ul>
