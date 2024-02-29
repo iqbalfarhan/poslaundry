@@ -14,7 +14,6 @@ class Index extends Component
     public function render()
     {
         $statusList = Transaksi::$statusList;
-        sleep(1);
         return view('livewire.pages.transaksi.index', [
             'datas' => Transaksi::when($this->status, function($t) use ($statusList){
                 $key = array_search($this->status, array_column($statusList, 'as'));
