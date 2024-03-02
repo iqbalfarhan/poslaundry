@@ -96,10 +96,18 @@
         </table>
     </div>
 
-    <button class="btn btn-primary" wire:click="simpan">
-        <x-tabler-check class="icon-5" />
-        <span>Simpan</span>
-    </button>
+    <div class="flex justify-between">
+        <button class="btn btn-primary" wire:click="simpan">
+            <x-tabler-check class="icon-5" />
+            <span>Simpan</span>
+        </button>
+        <button type="button" class="btn input-bordered"
+            wire:confirm="Yakin hapus transaksi ini? ini akan berpengaruh pada nominal saldo pendapatan di dashaboad anda."
+            wire:click="deleteTransaksi">
+            <x-tabler-trash class="icon-5" />
+            <span>Hapus transaksi</span>
+        </button>
+    </div>
 
     @livewire('pages.customer.actions')
     @livewire('pages.transaksi.add-item')

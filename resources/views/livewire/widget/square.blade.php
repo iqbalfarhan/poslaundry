@@ -1,4 +1,4 @@
-<div class="card card-compact border-2 aspect-square">
+<div class="card card-compact border-2 md:w-full md:h-full md:aspect-square">
     <div class="card-body text-center">
         <div class="grid place-content-center h-full gap-2">
             <h1 class="text-5xl font-bold">{{ $number }}</h1>

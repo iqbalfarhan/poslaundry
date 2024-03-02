@@ -11,8 +11,8 @@ class Home extends Component
     {
         $tanggal = date('Y-m-d');
         return view('livewire.pages.home', [
-            'pengambilan' => Transaksi::where('tanggal_selesai', $tanggal)->get(),
-            'orderhariini' => Transaksi::where('tanggal_order', $tanggal)->count()
+            'pengambilan' => Transaksi::whereDate('tanggal_selesai', $tanggal)->get(),
+            'orderhariini' => Transaksi::whereDate('tanggal_order', $tanggal)->count()
         ]);
     }
 }

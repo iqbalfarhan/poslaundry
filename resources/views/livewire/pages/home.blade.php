@@ -1,27 +1,33 @@
 <div class="space-y-8">
 
-    <div class="grid md:grid-cols-6 gap-6">
-        <div class="md:col-span-2 md:row-span-2">
+    <div class="grid lg:grid-cols-4 xl:grid-cols-6 gap-6">
+        <div class="col-span-2 row-span-2">
             @livewire('widget.pendapatan-bulanan')
         </div>
-        @livewire('widget.square', ['number' => $orderhariini, 'desc' => 'Order Hari ini'])
-        @livewire('widget.square', ['number' => $pengambilan->count(), 'desc' => 'Diambil Hari ini'])
-        <div class="md:col-span-2 md:row-span-2">
+        <div class="col-span-1 row-span-1">
+            @livewire('widget.square', ['number' => $orderhariini, 'desc' => 'Order Hari ini'])
+        </div>
+        <div class="col-span-1 row-span-1">
+            @livewire('widget.square', ['number' => $pengambilan->count(), 'desc' => 'Diambil Hari ini'])
+        </div>
+        <div class="col-span-2 row-span-2">
             @livewire('widget.status-laundry')
         </div>
-        <div class="md:col-span-2 md:row-span-2">
+        <div class="col-span-2 row-span-2">
             @livewire('widget.status')
         </div>
-        <div class="card card-compact border-2 aspect-auto md:col-span-2">
-            <div class="card-body flex justify-between">
-                <div class="line-clamp-3">
-                    Klik ini untuk proses pembuatan transaksi laundry baru.
-                </div>
-                <div class="card-actions justify-between items-baseline">
-                    <div class="card-title">Buat transaksi</div>
-                    <a href="{{ route('transaksi.create') }}" class="btn btn-circle" wire:navigate>
-                        <x-tabler-chevron-right />
-                    </a>
+        <div class="col-span-2 row-span-1">
+            <div class="card card-compact border-2 aspect-auto h-full w-full">
+                <div class="card-body flex justify-between">
+                    <div class="line-clamp-3">
+                        Klik ini untuk proses pembuatan transaksi laundry baru.
+                    </div>
+                    <div class="card-actions justify-between items-baseline">
+                        <div class="card-title">Buat transaksi</div>
+                        <a href="{{ route('transaksi.create') }}" class="btn btn-circle" wire:navigate>
+                            <x-tabler-chevron-right />
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

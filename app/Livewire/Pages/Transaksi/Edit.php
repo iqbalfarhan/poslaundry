@@ -32,6 +32,11 @@ class Edit extends Component
         array_splice($this->items, $index, 1);
     }
 
+    public function deleteTransaksi(){
+        $this->transaksi->delete();
+        $this->redirect(route('transaksi.index'), navigate:true);
+    }
+
     public function mount(Transaksi $transaksi){
         $this->tanggal = date('Y-m-d', strtotime($transaksi->tanggal_order));
         $this->tanggal_selesai = date('Y-m-d', strtotime($transaksi->tanggal_selesai));
@@ -72,7 +77,7 @@ class Edit extends Component
 
         $new->update($valid);
 
-        $this->redirect(route('transaksi.detail', $new->id), navigate:true);
+        $this->redirect(route('transaksi.index'), navigate:true);
     }
 
     public function render()
