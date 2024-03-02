@@ -9,9 +9,6 @@
     </div>
     <div class="navbar-end">
         <a href="{{ route('dokumentasi') }}" class="btn btn-ghost btn-circle">
-            <x-tabler-search class="icon-5" />
-        </a>
-        <a href="{{ route('dokumentasi') }}" class="btn btn-ghost btn-circle">
             <x-tabler-book class="icon-5" />
         </a>
     </div>

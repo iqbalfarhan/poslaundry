@@ -7,11 +7,14 @@ use Livewire\Component;
 
 class Index extends Component
 {
+    public $cari;
     protected $listeners = ['reload' => '$refresh'];
     public function render()
     {
         return view('livewire.pages.user.index', [
-            'datas' => User::get()
+            'datas' => User::when($this->cari, function($q){
+                $q->where('name', 'like', "%{$this->cari}%");
+            })->get()
         ]);
     }
 }

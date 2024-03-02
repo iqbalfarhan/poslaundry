@@ -1,18 +1,18 @@
 <div class="space-y-8">
 
-    <div class="grid grid-cols-6 gap-6">
-        <div class="col-span-2 row-span-2">
+    <div class="grid md:grid-cols-6 gap-6">
+        <div class="md:col-span-2 md:row-span-2">
             @livewire('widget.pendapatan-bulanan')
         </div>
         @livewire('widget.square', ['number' => $orderhariini, 'desc' => 'Order Hari ini'])
         @livewire('widget.square', ['number' => $pengambilan->count(), 'desc' => 'Diambil Hari ini'])
-        <div class="col-span-2 row-span-2">
+        <div class="md:col-span-2 md:row-span-2">
             @livewire('widget.status-laundry')
         </div>
-        <div class="col-span-2 row-span-2">
+        <div class="md:col-span-2 md:row-span-2">
             @livewire('widget.status')
         </div>
-        <div class="card card-compact border-2 aspect-auto col-span-2">
+        <div class="card card-compact border-2 aspect-auto md:col-span-2">
             <div class="card-body flex justify-between">
                 <div class="line-clamp-3">
                     Klik ini untuk proses pembuatan transaksi laundry baru.

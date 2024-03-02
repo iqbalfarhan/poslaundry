@@ -1,7 +1,7 @@
 <div class="space-y-6">
     <div class="flex flex-col md:flex-row justify-between">
         <div class="flex gap-1">
-            <input type="text" class="input input-bordered" placeholder="Pencarian">
+            <input type="text" class="input input-bordered" placeholder="Pencarian" wire:model.live="cari">
         </div>
         <button class="btn input-bordered" wire:click="$dispatch('createPaket')">
             <x-tabler-circle-plus class="icon-5" />

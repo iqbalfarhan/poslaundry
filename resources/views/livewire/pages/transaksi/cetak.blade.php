@@ -1,4 +1,10 @@
 <div class="flex gap-4">
+    <div class="print:hidden">
+        <button class="btn btn-primary">
+            <x-tabler-printer class="icon-5" />
+            <span>Cetak resi</span>
+        </button>
+    </div>
     <div class="card border-2 max-w-md rounded-none bg-white mx-auto text-black w-fit">
         <div class="card-body space-y-4 text-xs">
             <div class="text-3xl font-semibold">{{ config('app.name') }}</div>
