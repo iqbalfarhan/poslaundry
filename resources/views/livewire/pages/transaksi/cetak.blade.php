@@ -29,11 +29,6 @@
                     <td>:</td>
                     <td>{{ $transaksi->tanggal_selesai->format('d M Y') }}</td>
                 </tr>
-                <tr>
-                    <td>Status</td>
-                    <td>:</td>
-                    <td>{{ $transaksi->status }}</td>
-                </tr>
             </table>
             <table class="table table-xs border-2">
                 <thead>
