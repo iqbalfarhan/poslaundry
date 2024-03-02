@@ -16,6 +16,16 @@ class Status extends Component
         }
     }
 
+    public function addTime(){
+        $count = count(Transaksi::$statusList) - 1;
+        if ($this->step != $count) {
+            $this->step++;
+        }
+        else{
+            $this->step = 0;
+        }
+    }
+
     public function decrease(){
         if ($this->step != 0) {
             $this->step--;

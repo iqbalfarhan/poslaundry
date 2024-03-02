@@ -8,8 +8,11 @@
         <span class="font-semibold text-xl">{{ $title }}</span>
     </div>
     <div class="navbar-end">
-        <button class="btn btn-ghost btn-circle">
-            <x-tabler-bell class="icon-5" />
-        </button>
+        <a href="{{ route('dokumentasi') }}" class="btn btn-ghost btn-circle">
+            <x-tabler-search class="icon-5" />
+        </a>
+        <a href="{{ route('dokumentasi') }}" class="btn btn-ghost btn-circle">
+            <x-tabler-book class="icon-5" />
+        </a>
     </div>
 </div>

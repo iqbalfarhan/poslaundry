@@ -15,5 +15,11 @@ class Pengaturan extends Model
         'value',
     ];
 
-    public static $typeList = ['text', 'number', 'boolean', 'file', 'longtext'];
+    public static $typeList = [
+        'tulisan',
+        'angka',
+        'ya_tidak',
+        'gambar',
+        'tulisan panjang'
+    ];
 }

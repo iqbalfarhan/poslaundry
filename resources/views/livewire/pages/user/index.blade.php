@@ -14,7 +14,7 @@
             <thead>
                 <th>No</th>
                 <th>Nama</th>
-                <th>Nomor telepon</th>
+                <th>Alamat email</th>
                 <th class="text-center">Action</th>
             </thead>
             @foreach ($datas as $data)

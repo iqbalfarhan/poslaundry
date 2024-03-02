@@ -14,7 +14,13 @@ return new class extends Migration
         Schema::create('pengaturans', function (Blueprint $table) {
             $table->id();
             $table->string('key');
-            $table->enum('type', ['text', 'number', 'boolean', 'file', 'longtext']);
+            $table->enum('type', [
+                'tulisan',
+                'angka',
+                'ya_tidak',
+                'gambar',
+                'tulisan panjang'
+            ]);
             $table->string('value')->nullable();
             $table->timestamps();
         });

@@ -17,12 +17,12 @@ class DatabaseSeeder extends Seeder
             'email' => 'iqbalfarhan1996@gmail.com',
             'password' => 'adminoke'
         ]);
-        \App\Models\User::factory(10)->create();
 
         $this->call([
             CustomerSeeder::class,
             PaketSeeder::class,
             TransaksiSeeder::class,
+            PengaturanSeeder::class,
         ]);
 
     }

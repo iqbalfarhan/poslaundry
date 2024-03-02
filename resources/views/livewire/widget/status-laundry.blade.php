@@ -1,4 +1,4 @@
-<div class="card card-compact border-2 aspect-square overflow-hidden">
+<div class="card card-compact border-2 h-full overflow-hidden">
     <div class="card-body">
         <div class="card-title">Status laundry</div>
         <div class="grid place-content-center">

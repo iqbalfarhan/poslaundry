@@ -22,35 +22,35 @@ class Transaksi extends Model
     public static $statusList = [
         'mengantri' => [
             'title' => 'mengantri',
-            'illustration' => 'illustration/add_to_list.svg',
+            'illustration' => 'illustration/check_boxes.svg',
             'color' => 'neutral',
             'icon' => 'tabler-list',
             'as' => 'antri',
-            'keterangan' => 'ini keterangan sebagai detail dari status ini mengantri'
+            'keterangan' => 'Order baru saja diinput dan belum masuk ketahap pengerjaan'
         ],
         'dalam pengerjaan' => [
             'title' => 'dalam pengerjaan',
-            'illustration' => 'illustration/loading_box.svg',
+            'illustration' => 'illustration/speed_test.svg',
             'color' => 'success',
             'icon' => 'tabler-wash-hand',
             'as' => 'proses',
-            'keterangan' => 'ini keterangan sebagai detail dari status ini dalam pengerjaan'
-        ],
-        'proses pengemasan' => [
-            'title' => 'proses pengemasan',
-            'illustration' => 'illustration/todo_done.svg',
-            'color' => 'info',
-            'icon' => 'tabler-box',
-            'as' => 'dikemas',
-            'keterangan' => 'ini keterangan sebagai detail dari status ini proses pengemasan'
+            'keterangan' => 'Order sedang dalam proses pengerjaan. biasanya memakan waktu agak lama'
         ],
         'sudah selesai' => [
             'title' => 'sudah selesai',
-            'illustration' => 'illustration/well_done.svg',
+            'illustration' => 'illustration/certification.svg',
             'color' => 'warning',
             'icon' => 'tabler-circle-check',
             'as' => 'selesai',
-            'keterangan' => 'ini keterangan sebagai detail dari status ini sudah selesai'
+            'keterangan' => 'Order laundry sudah selesai. tinggal menunggu untuk pengambilan.'
+        ],
+        'sudah diambil' => [
+            'title' => 'sudah diambil',
+            'illustration' => 'illustration/completing.svg',
+            'color' => 'info',
+            'icon' => 'tabler-check',
+            'as' => 'diambil',
+            'keterangan' => 'Order laundry sudah selesai dan sudah diambil oleh customer.'
         ],
     ];
 

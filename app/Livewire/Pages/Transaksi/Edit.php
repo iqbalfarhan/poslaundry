@@ -6,17 +6,16 @@ use App\Models\Customer;
 use App\Models\Paket;
 use App\Models\Transaksi;
 use Livewire\Attributes\On;
-use Livewire\Attributes\Title;
 use Livewire\Component;
 
-#[Title('Buat transaksi')]
-class Create extends Component
+class Edit extends Component
 {
     protected $listeners = ['reload' => '$refresh'];
     public $items = [];
     public $customer_id;
     public $tanggal;
     public $tanggal_selesai;
+    public Transaksi $transaksi;
 
     #[On('doneItem')]
     public function doneItem($newItem){
@@ -33,10 +32,17 @@ class Create extends Component
         array_splice($this->items, $index, 1);
     }
 
-    public function mount(){
-        $tanggal = date('Y-m-d');
-        $this->tanggal = $tanggal;
-        $this->tanggal_selesai = date('Y-m-d', strtotime('+2 days'));
+    public function mount(Transaksi $transaksi){
+        $this->tanggal = date('Y-m-d', strtotime($transaksi->tanggal_order));
+        $this->tanggal_selesai = date('Y-m-d', strtotime($transaksi->tanggal_selesai));
+        $this->customer_id = $transaksi->customer_id;
+
+        foreach($transaksi->items as $item){
+            $this->items[] = [
+                'paket_id' => Paket::where('name', $item->name)->first()->id,
+                'qty' => $item->qty,
+            ];
+        }
     }
 
     public function simpan(){
@@ -62,14 +68,16 @@ class Create extends Component
         }
 
         $valid['total'] = $this->totalHarga();
-        $new = Transaksi::create($valid);
+        $new = $this->transaksi;
 
-        $this->redirect(route('transaksi.cetak', $new), navigate:true);
+        $new->update($valid);
+
+        $this->redirect(route('transaksi.detail', $new->id), navigate:true);
     }
 
     public function render()
     {
-        return view('livewire.pages.transaksi.create', [
+        return view('livewire.pages.transaksi.edit', [
             'customers' => Customer::pluck('name', 'id')
         ]);
     }

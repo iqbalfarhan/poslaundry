@@ -4,22 +4,8 @@
         <div class="col-span-2 row-span-2">
             @livewire('widget.pendapatan-bulanan')
         </div>
-        <div class="card card-compact border-2 aspect-square">
-            <div class="card-body text-center">
-                <div class="grid place-content-center h-full">
-                    <h1 class="text-6xl font-bold">23</h1>
-                    <div class="text-lg">Dalam proses</div>
-                </div>
-            </div>
-        </div>
-        <div class="card card-compact border-2 aspect-square">
-            <div class="card-body text-center">
-                <div class="grid place-content-center h-full">
-                    <h1 class="text-6xl font-bold">20</h1>
-                    <div class="text-lg">Sudah selesai</div>
-                </div>
-            </div>
-        </div>
+        @livewire('widget.square', ['number' => $orderhariini, 'desc' => 'Order Hari ini'])
+        @livewire('widget.square', ['number' => $pengambilan->count(), 'desc' => 'Diambil Hari ini'])
         <div class="col-span-2 row-span-2">
             @livewire('widget.status-laundry')
         </div>

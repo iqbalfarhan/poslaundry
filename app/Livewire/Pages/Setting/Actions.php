@@ -6,9 +6,12 @@ use App\Livewire\Forms\SettingForm;
 use App\Models\Pengaturan;
 use Livewire\Attributes\On;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class Actions extends Component
 {
+    use WithFileUploads;
+
     public $show = false;
     public ?SettingForm $form;
 

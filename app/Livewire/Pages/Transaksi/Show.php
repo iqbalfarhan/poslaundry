@@ -11,14 +11,16 @@ class Show extends Component
     public $show = false;
     public ?Transaksi $transaksi;
 
-    #[On('detailTransaksi')]
-    public function detailTransaksi(Transaksi $transaksi){
+    #[On('showTransaksi')]
+    public function showTransaksi(Transaksi $transaksi){
         $this->show = true;
         $this->transaksi = $transaksi;
     }
 
     public function render()
     {
-        return view('livewire.pages.transaksi.show');
+        return view('livewire.pages.transaksi.show', [
+            'statusList' => Transaksi::$statusList
+        ]);
     }
 }

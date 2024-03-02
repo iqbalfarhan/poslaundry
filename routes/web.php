@@ -24,7 +24,9 @@ Route::middleware('auth')->group(function(){
 
     Route::get('transaksi', \App\Livewire\Pages\Transaksi\Index::class)->name('transaksi.index');
     Route::get('transaksi/create', \App\Livewire\Pages\Transaksi\Create::class)->name('transaksi.create');
-    Route::get('transaksi/{transaksi}', \App\Livewire\Pages\Transaksi\Detail::class)->name('transaksi.detail');
+    Route::get('transaksi/{transaksi}/edit', \App\Livewire\Pages\Transaksi\Edit::class)->name('transaksi.edit');
+    Route::get('transaksi/{transaksi}/cetak', \App\Livewire\Pages\Transaksi\Cetak::class)->name('transaksi.cetak');
+    // Route::get('transaksi/{transaksi}', \App\Livewire\Pages\Transaksi\Detail::class)->name('transaksi.detail');
 
     Route::get('customer', \App\Livewire\Pages\Customer\Index::class)->name('customer.index');
     Route::get('customer/{customer}', \App\Livewire\Pages\Customer\Show::class)->name('customer.show');

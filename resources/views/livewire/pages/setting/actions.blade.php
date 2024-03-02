@@ -8,10 +8,10 @@
             </div>
 
             <div class="space-y-2">
-                <label class="input input-bordered flex items-center gap-2">
-                    <x-tabler-user class="icon-5" />
-                    <input type="text" class="grow" wire:model="form.key" placeholder="Nama pengaturan">
-                </label>
+                <div class="form-control w-full">
+                    <input type="text" class="input input-bordered" wire:model="form.key"
+                        placeholder="Nama pengaturan">
+                </div>
                 <select wire:model.live="form.type" class="select select-bordered w-full">
                     <option value="">Pilih type</option>
                     @foreach ($type_list as $type)

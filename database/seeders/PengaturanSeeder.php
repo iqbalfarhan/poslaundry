@@ -15,14 +15,19 @@ class PengaturanSeeder extends Seeder
     {
         $datas = [
             [
-                'key' => 'nama toko',
-                'type' => 'text',
-                'value' => 'Iqbal loundry',
+                'key' => 'nama',
+                'type' => 'tulisan',
+                'value' => 'POS Loundry',
+            ],
+            [
+                'key' => 'alamat',
+                'type' => 'tulisan panjang',
+                'value' => 'ini alamat toko laundrynya RT.00 No.00A Kota Laundry',
             ],
             [
                 'key' => 'versi',
-                'type' => 'number',
-                'value' => 1,
+                'type' => 'tulisan',
+                'value' => "v1.0",
             ],
         ];
 

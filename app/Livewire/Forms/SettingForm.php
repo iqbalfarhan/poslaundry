@@ -9,7 +9,7 @@ use Livewire\Form;
 class SettingForm extends Form
 {
     public $key = "";
-    public $type = "";
+    public $type = "text";
     public $value = "";
     public ?Pengaturan $pengaturan;
 
@@ -27,7 +27,10 @@ class SettingForm extends Form
             'value' => 'required',
         ]);
 
-        $valid['password'] = "password";
+        if ($this->type == "file") {
+            $this->value->store('setting');
+            $valid['value'] = $this->value->hashName('setting');
+        }
 
         Pengaturan::create($valid);
         $this->reset();
@@ -39,6 +42,12 @@ class SettingForm extends Form
             'type' => 'required',
             'value' => 'required',
         ]);
+
+        if ($this->type == "file") {
+            $this->value->store('setting');
+            $valid['value'] = $this->value->hashName('setting');
+        }
+
 
         $this->pengaturan->update($valid);
         $this->reset();

@@ -1,8 +1,11 @@
-<div class="card card-compact border-2 aspect-square overflow-hidden">
+<div class="card card-compact border-2 h-full overflow-hidden">
     <div class="flex flex-col justify-between h-full">
         <div class="card-body">
             <div class="card-title">Pendapatan bulanan</div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum fuga doloribus deserunt et, illum magni.</p>
+            <div class="flex flex-col">
+                <h2 class="text-3xl font-bold">Rp. {{ Number::format($bulanini, locale: 'id') }}</h2>
+                <span class="text-xs opacity-75">Bulan februari Rp. {{ Number::format($bulanlalu, locale: 'id') }}</span>
+            </div>
         </div>
         <canvas id="myChart" class="scale-110"></canvas>
     </div>

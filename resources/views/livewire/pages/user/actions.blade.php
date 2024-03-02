@@ -13,8 +13,13 @@
                     <input type="text" class="grow" wire:model="form.name" placeholder="Nama user">
                 </label>
                 <label class="input input-bordered flex items-center gap-2">
-                    <x-tabler-phone class="icon-5" />
-                    <input type="text" class="grow" wire:model="form.email" placeholder="Email telepon">
+                    <x-tabler-at class="icon-5" />
+                    <input type="text" class="grow" wire:model="form.email" placeholder="Alamat email">
+                </label>
+                <label class="input input-bordered flex items-center gap-2">
+                    <x-tabler-key class="icon-5" />
+                    <input type="password" class="grow" placeholder="Password" value="password"
+                        @disabled(true)>
                 </label>
             </div>
             <div class="modal-action justify-between">

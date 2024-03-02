@@ -1,12 +1,63 @@
-# POS Laundry Development To Do List
+# Buku petunjuk Aplikasi POS Laundry.
 
--   text untuk widget pendapatan bulanan
+Selamat datang di dokumentasi aplikasi pos laundry. Halaman init bertujuan untuk memberikan panduan awal tentang cara menggunakan aplikasi ini.
+
+Pada halaman ini, Anda akan menemukan informasi tentang cara melakukan instalasi aplikasi, konfigurasi awal, dan langkah-langkah dasar untuk memulai menggunakan aplikasi pos laundry ini.
+
+Juga, akan dijelaskan mengenai persyaratan sistem yang diperlukan dan langkah-langkah troubleshooting untuk mengatasi masalah umum yang mungkin Anda hadapi saat menggunakan aplikasi ini. Jangan ragu untuk menjelajahi dokumentasi ini dan jangan sungkan untuk menghubungi tim dukungan jika Anda memerlukan bantuan lebih lanjut.
+
+Selamat menggunakan aplikasi pos laundry kami!. Gunakan `Ctrl + f` untuk pencarian topik yang ingin Anda temukan dengan cepat.
+
+---
+
+# Pengaturan awal
+
+Tahap pengaturan awal aplikasi ini di lakukan padasaat pertamakali melakukan instalasi baru di pc atau server anda. berikut ini hal-hal yang perlu untuk di atur sebelum menjalankan aplikasi pos laundry ini.
+
+-   Mengganti nama dan logo aplikasi
+-   pengaturan login aplikasi
+-   pengaturan paket laundry
+
+---
+
+### Mengganti Nama dan logo aplikasi
+
+Untuk mengganti nama dan logo aplikasi anda harus masuk ke menu pengaturan aplikasi, langkah-langkahnya adalah sebagai berikut:
+
+-   **Mengganti nama aplikasi** : Klik pada icon pensil pada bagian kanan "nama". ganti nama aplikasi dengan nama yang anda inginkan kemudian klik simpan.
+-   **Mengganti logo aplikasi** : Klik pada icon pensil pada bagian kanan "logo". pilih logo aplikasi dengan logo yang anda inginkan kemudian klik simpan.
+
+Setelah itu, nama dan logo aplikasi akan diperbarui sesuai dengan nama atau gambar yang Anda pilih.
+
+---
+
+### Pengaturan login aplikasi
+
+Pengaturan login aplikasi memungkinkan pengguna untuk mengelola cara mereka masuk ke dalam aplikasi. Berikut adalah langkah-langkah untuk mengatur login aplikasi:
+
+-   **Masuk ke menu edit profile**: Di dalam menu pengaturan, cari opsi yang berkaitan dengan login atau autentikasi. Ini mungkin disebut "Pengaturan Login" atau "Opsi Autentikasi".
+-   **Simpan Perubahan**: Setelah Anda mengatur preferensi login Anda, pastikan untuk mengklik tombol "Simpan" atau "Terapkan" untuk menyimpan perubahan.
+
+Dengan mengikuti langkah-langkah di atas, Anda dapat dengan mudah mengatur dan mengelola pengaturan login aplikasi sesuai dengan preferensi Anda.
+
+---
+
+### Pengaturan paket laundry
+
+Paket laundry berisi berbagai jenis paket laundry yang dapat disesuaikan dengan kebutuhan Anda. Berikut adalah langkah-langkah untuk mengatur paket laundry. sebelum itu anda masuk ke menu paket laundry:
+
+-   **Menambahkan Paket Laundry** : Klik tombol tambah paket. kemudian Isi detail paket laundry. kemudian Simpan Perubahan dengan klik tombol simpan.
+-   **Mengubah Paket Laundry** : Cari paket laundry yang ingin Anda ubah kemudian Klik icon pensil. kemudian Ubah informasi yang perlu untuk diubah kemudian Simpan Perubahan dengan klik simpan.
+-   **Menghapus Paket Laundry** : Temukan Paket yang Ingin Dihapus kemudian Klik tombol dengan icon tempat sampah. kemudian Konfirmasi Penghapusan.
+
+Dengan mengikuti langkah-langkah di atas, Anda dapat dengan mudah mengatur paket laundry sesuai dengan kebutuhan bisnis Anda.
+
+---
+
+## Development todo
+
 -   data chart pendapatan bulanan
--   pengambilan hari ini di dahsboard
--   edit detail transaksi
--   hapus status di resi
+-   halaman detail transaksi
 -   toggle aktifkan paket laundry
 -   tombol print resi laundry
 -   warna card transaksi
--   pengaturan aplikasi
--   edit profile

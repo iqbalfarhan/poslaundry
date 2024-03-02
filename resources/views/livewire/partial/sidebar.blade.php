@@ -20,6 +20,8 @@
                         'transaksi.index',
                         'transaksi.create',
                         'transaksi.detail',
+                        'transaksi.cetak',
+                        'transaksi.edit',
                     ]),
                 ]) wire:navigate>
                     <x-tabler-ticket class="icon-5" />

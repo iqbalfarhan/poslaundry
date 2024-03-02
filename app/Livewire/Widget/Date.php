@@ -8,7 +8,7 @@ class Date extends Component
 {
     public function render()
     {
-        list($tahun, $bulan, $tanggal) = explode(' ', date('Y F d'));
+        list($tahun, $bulan, $tanggal) = explode(' ', date('Y M d'));
         return view('livewire.widget.date', [
             'tahun' => $tahun,
             'bulan' => $bulan,

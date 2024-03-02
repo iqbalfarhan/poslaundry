@@ -10,7 +10,8 @@ class StatusLaundry extends Component
     public $datasets = [];
 
     public function mount(){
-        $datas = Transaksi::get()->groupBy('status')->map(function ($transaksis) {
+        $statuses = array_keys(Transaksi::$statusList);
+        $datas = Transaksi::whereIn('status', $statuses)->get()->groupBy('status')->map(function ($transaksis) {
             return $transaksis->count();
         });
 

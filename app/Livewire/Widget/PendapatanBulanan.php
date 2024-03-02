@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Widget;
 
+use App\Models\Transaksi;
 use Livewire\Component;
 
 class PendapatanBulanan extends Component
@@ -35,6 +36,15 @@ class PendapatanBulanan extends Component
 
     public function render()
     {
-        return view('livewire.widget.pendapatan-bulanan');
+        list($tahunini, $bulanini) = explode('-', date('Y-m'));
+        $bulanini = Transaksi::whereMonth('tanggal_order', $bulanini)->whereYear('tanggal_order', $tahunini)->sum('total');
+
+        list($tahunlalu, $bulanlalu) = explode('-', date('Y-m', strtotime('-1 months')));
+        $bulanlalu = Transaksi::whereMonth('tanggal_order', $bulanlalu)->whereYear('tanggal_order', $tahunlalu)->sum('total');
+
+        return view('livewire.widget.pendapatan-bulanan', [
+            'bulanini' => $bulanini,
+            'bulanlalu' => $bulanlalu,
+        ]);
     }
 }

@@ -1,11 +1,9 @@
-<div class="card card-compact border-2 w-full h-full">
-    <div class="card-body text-center space-y-8 justify-evenly">
-        <img src="{{ url($steps[$step]['illustration']) }}" alt="" class="h-36 mx-auto">
-        <div>
-            <h3 class="font-bold uppercase">{{ $steps[$step]['title'] }}...</h3>
-            <div class="text-xs opacity-50">
-                {{ $steps[$step]['keterangan'] }} {{ $step }}
-            </div>
+<div class="card card-compact border-2 w-full h-full" wire:poll.10s="addTime">
+    <div class="card-body text-center space-y-6 justify-evenly">
+        <h3 class="font-bold uppercase">{{ $steps[$step]['title'] }}...</h3>
+        <img src="{{ url($steps[$step]['illustration']) }}" alt="" class="h-36 mx-auto bg-base-200 p-4 skeleton">
+        <div class="text-xs opacity-50">
+            {{ $steps[$step]['keterangan'] }}
         </div>
         <div class="card-actions justify-between items-center">
             <button class="btn btn-xs btn-circle btn-neutral" wire:click="decrease">
