@@ -7,9 +7,9 @@
                 <small class="text-xs capitalize opacity-70">{{ $transaksi->customer->name }}</small>
             </div>
             <div class="tooltip" data-tip="{{ ucfirst($transaksi->status) }}">
-                <button class="btn btn-circle"
+                <button class="btn btn-circle btn-ghost"
                     wire:click="$dispatch('changeStatus', {'transaksi' : {{ $transaksi->id }}})">
-                    <x-icon name="{{ $transaksi->icon }}" />
+                    <x-icon name="{{ $transaksi->icon }}" class="icon-8" />
                 </button>
             </div>
         </div>
