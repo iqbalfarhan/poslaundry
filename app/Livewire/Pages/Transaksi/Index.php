@@ -22,9 +22,11 @@ class Index extends Component
             $status = array_keys($statusList)[$key];
             return $t->where('status', $status);
         })->when($this->cari, function($q){
-            return $q->whereHas('customer', function($w) {
-                 $w->where('name', 'like', "%{$this->cari}%");
-             })->orWhere('kode', 'like', "%{$this->cari}%");
+            $q->whereHas('customer', function($w) {
+                $w->where('name', 'like', "%{$this->cari}%");
+            })
+            ->orWhere('id', $this->cari)
+            ->orWhere('kode', 'like', "%{$this->cari}%");
         })->get();
 
         return view('livewire.pages.transaksi.index', [

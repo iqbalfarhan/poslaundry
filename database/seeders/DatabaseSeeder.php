@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            CustomerSeeder::class,
-            PaketSeeder::class,
-            TransaksiSeeder::class,
+            // CustomerSeeder::class,
+            // PaketSeeder::class,
+            // TransaksiSeeder::class,
             PengaturanSeeder::class,
         ]);
 

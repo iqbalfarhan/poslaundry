@@ -39,7 +39,7 @@ class Transaksi extends Model
         'sudah selesai' => [
             'title' => 'sudah selesai',
             'illustration' => 'illustration/certification.svg',
-            'color' => 'warning',
+            'color' => 'primary',
             'icon' => 'tabler-circle-check',
             'as' => 'selesai',
             'keterangan' => 'Order laundry sudah selesai. tinggal menunggu untuk pengambilan.'
@@ -48,7 +48,7 @@ class Transaksi extends Model
             'title' => 'sudah diambil',
             'illustration' => 'illustration/completing.svg',
             'color' => 'info',
-            'icon' => 'tabler-check',
+            'icon' => 'tabler-shopping-cart',
             'as' => 'diambil',
             'keterangan' => 'Order laundry sudah selesai dan sudah diambil oleh customer.'
         ],
@@ -77,6 +77,14 @@ class Transaksi extends Model
     }
 
     public function getIconAttribute(){
-        return self::$statusList[$this->status]['icon'] ?? "primary";
+        return self::$statusList[$this->status]['icon'] ?? "home";
+    }
+
+    public function getBulanAttribute(){
+        return date('F', strtotime($this->tanggal_order));
+    }
+
+    public function getPadIdAttribute(){
+        return str_pad($this->id, 5, '0', STR_PAD_LEFT);
     }
 }

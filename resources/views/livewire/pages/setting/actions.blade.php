@@ -4,20 +4,10 @@
         <form class="modal-box space-y-8 max-w-sm" wire:submit="simpan">
 
             <div class="divider">
-                <h3 class="font-semibold text-xl">Pengaturan</h3>
+                <h3 class="font-semibold text-xl">Update Pengaturan</h3>
             </div>
 
             <div class="space-y-2">
-                <div class="form-control w-full">
-                    <input type="text" class="input input-bordered" wire:model="form.key"
-                        placeholder="Nama pengaturan">
-                </div>
-                <select wire:model.live="form.type" class="select select-bordered w-full">
-                    <option value="">Pilih type</option>
-                    @foreach ($type_list as $type)
-                        <option value="{{ $type }}">{{ $type }}</option>
-                    @endforeach
-                </select>
                 <div class="form-control">
                     @if ($form->type == 'tulisan')
                         <input type="text" class="input input-bordered" wire:model="form.value" placeholder="Value">

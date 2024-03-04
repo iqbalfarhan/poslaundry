@@ -7,32 +7,20 @@ use Livewire\Component;
 
 class PendapatanBulanan extends Component
 {
-    public $datasets = [
-        [
-            'bulan' => 'Januari',
-            'value' => 12345,
-        ],
-        [
-            'bulan' => 'Februari',
-            'value' => 65432,
-        ],
-        [
-            'bulan' => 'Maret',
-            'value' => 44567,
-        ],
-        [
-            'bulan' => 'April',
-            'value' => 87654,
-        ],
-        [
-            'bulan' => 'Mei',
-            'value' => 56789,
-        ],
-        [
-            'bulan' => 'Juni',
-            'value' => 67890,
-        ],
-    ];
+    public $datasets = [];
+
+    public function mount(){
+        $transaksi = Transaksi::whereYear('tanggal_order', date('Y'))->orderBy('tanggal_order')->get()->groupBy('bulan')->map(function($q){
+            return $q->sum('total');
+        });
+
+        foreach ($transaksi as $bulan => $total) {
+            $this->datasets[] = [
+                'bulan' => $bulan,
+                'value' => $total,
+            ];
+        }
+    }
 
     public function render()
     {

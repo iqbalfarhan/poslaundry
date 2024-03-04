@@ -63,4 +63,8 @@
     .modal {
         @apply backdrop-blur-sm;
     }
+
+    .table td {
+        @apply align-top;
+    }
 }

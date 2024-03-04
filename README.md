@@ -56,7 +56,5 @@ Dengan mengikuti langkah-langkah di atas, Anda dapat dengan mudah mengatur paket
 
 ## Development todo
 
--   data chart pendapatan bulanan
--   toggle aktifkan paket laundry
 -   tombol print resi laundry
--   warna card transaksi
+-   pengelompokan dokumentasi berdasarkan fitur

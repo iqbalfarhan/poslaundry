@@ -27,7 +27,7 @@ class SettingForm extends Form
             'value' => 'required',
         ]);
 
-        if ($this->type == "file") {
+        if ($this->type == "gambar") {
             $this->value->store('setting');
             $valid['value'] = $this->value->hashName('setting');
         }
@@ -43,7 +43,7 @@ class SettingForm extends Form
             'value' => 'required',
         ]);
 
-        if ($this->type == "file") {
+        if ($this->type == "gambar") {
             $this->value->store('setting');
             $valid['value'] = $this->value->hashName('setting');
         }

@@ -29,7 +29,8 @@
                     fill: true,
                     tension: 0.1,
                     pointStyle: false,
-                    showLine: true
+                    showLine: true,
+                    borderWidth: 4
                 }]
             },
             options: {

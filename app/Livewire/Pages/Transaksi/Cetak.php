@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Pages\Transaksi;
 
+use App\Models\Pengaturan;
 use App\Models\Transaksi;
 use Livewire\Component;
 
@@ -15,6 +16,8 @@ class Cetak extends Component
 
     public function render()
     {
-        return view('livewire.pages.transaksi.cetak');
+        return view('livewire.pages.transaksi.cetak', [
+            'setting' => Pengaturan::pluck('value', 'key')
+        ]);
     }
 }

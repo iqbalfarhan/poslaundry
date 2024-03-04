@@ -19,4 +19,8 @@ class Paket extends Model
     public function getRupiahAttribute(){
         return number_format($this->harga, 0, ',', '.');
     }
+
+    public function scopeByShow($query){
+        return $query->where('show', true);
+    }
 }

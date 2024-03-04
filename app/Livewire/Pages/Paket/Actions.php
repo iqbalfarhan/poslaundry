@@ -24,7 +24,7 @@ class Actions extends Component
     }
 
     public function simpan(){
-        if ($this->form->paket) {
+        if (isset($this->form->paket)) {
             $this->form->update();
         }
         else{

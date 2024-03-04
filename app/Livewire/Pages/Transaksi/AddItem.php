@@ -30,7 +30,7 @@ class AddItem extends Component
     public function render()
     {
         return view('livewire.pages.transaksi.add-item', [
-            'pakets' => Paket::pluck('name', 'id')
+            'pakets' => Paket::byShow()->pluck('name', 'id')
         ]);
     }
 }

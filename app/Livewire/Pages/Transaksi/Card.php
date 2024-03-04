@@ -9,15 +9,15 @@ class Card extends Component
 {
     public Transaksi $transaksi;
     protected $listeners = ['reload' => '$refresh'];
-    public $color;
 
-    public function mount(Transaksi $data, $color){
+    public function mount(Transaksi $data){
         $this->transaksi = $data;
-        $this->color = $color ?? $this->transaksi->color;
     }
 
     public function render()
     {
-        return view('livewire.pages.transaksi.card');
+        return view('livewire.pages.transaksi.card', [
+            'statusList' => Transaksi::$statusList
+        ]);
     }
 }

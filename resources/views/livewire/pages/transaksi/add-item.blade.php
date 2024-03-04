@@ -1,7 +1,7 @@
 <div>
     <input type="checkbox" id="addItem" class="modal-toggle" wire:model.live="show" />
     <div class="modal" role="dialog">
-        <form class="modal-box max-w-sm" wire:submit="simpan">
+        <form class="modal-box max-w-lg" wire:submit="simpan">
             <div class="divider">
                 <h3 class="font-semibold text-xl">Menambahkan item</h3>
             </div>
@@ -14,8 +14,7 @@
                         <option value="{{ $pktid }}">{{ $pktname }}</option>
                     @endforeach
                 </select>
-                <label for=""
-                    class="input input-bordered flex gap-2 items-center @error('qty') input-error @enderror">
+                <label class="input input-bordered flex gap-2 items-center @error('qty') input-error @enderror">
                     <input type="text" class="grow" wire:model.live="qty" placeholder="Kuantitas">
                     @isset($paket_id)
                         @php

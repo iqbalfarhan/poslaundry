@@ -19,7 +19,7 @@ class TransaksiFactory extends Factory
      */
     public function definition(): array
     {
-        $tanggal = fake()->date();
+        $tanggal = fake()->date('2024-m-d');
         $paket = Paket::find(fake()->randomElement(Paket::pluck('id')));
 
         $qty = rand(1, 2);

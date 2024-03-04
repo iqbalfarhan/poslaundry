@@ -17,7 +17,7 @@
                 <th>Alamat email</th>
                 <th class="text-center">Action</th>
             </thead>
-            @foreach ($datas as $data)
+            @forelse ($datas as $data)
                 <tr>
                     <td>{{ $data->id }}</td>
                     <td>{{ $data->name }}</td>
@@ -36,7 +36,13 @@
                         </div>
                     </td>
                 </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="100%">
+                        @livewire('partial.nocontent')
+                    </td>
+                </tr>
+            @endforelse
         </table>
     </div>
 

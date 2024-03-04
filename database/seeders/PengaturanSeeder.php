@@ -22,12 +22,7 @@ class PengaturanSeeder extends Seeder
             [
                 'key' => 'alamat',
                 'type' => 'tulisan panjang',
-                'value' => 'ini alamat toko laundrynya RT.00 No.00A Kota Laundry',
-            ],
-            [
-                'key' => 'versi',
-                'type' => 'tulisan',
-                'value' => "v1.0",
+                'value' => 'Alamat: Jl.Rahayu jaya RT.30 No.123S, Balikpapan, Balikpapan barat, Wa : 0812345678890',
             ],
             [
                 'key' => 'logo',
