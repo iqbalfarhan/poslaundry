@@ -19,14 +19,14 @@
                     @endforeach
                 </select>
                 <div class="form-control">
-                    @if ($form->type == 'text')
+                    @if ($form->type == 'tulisan')
                         <input type="text" class="input input-bordered" wire:model="form.value" placeholder="Value">
-                    @elseif ($form->type == 'number')
+                    @elseif ($form->type == 'angka')
                         <input type="number" class="input input-bordered" wire:model="form.value" placeholder="Value">
-                    @elseif ($form->type == 'file')
+                    @elseif ($form->type == 'gambar')
                         <input type="file" class="file-input file-input-bordered" wire:model="form.value"
-                            placeholder="Value">
-                    @elseif ($form->type == 'longtext')
+                            placeholder="Value" accept="image/*">
+                    @elseif ($form->type == 'tulisan panjang')
                         <textarea class="textarea textarea-bordered w-full" wire:model="form.value" placeholder="Value"></textarea>
                     @endif
                 </div>

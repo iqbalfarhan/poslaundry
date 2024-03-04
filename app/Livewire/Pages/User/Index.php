@@ -13,7 +13,8 @@ class Index extends Component
     {
         return view('livewire.pages.user.index', [
             'datas' => User::when($this->cari, function($q){
-                $q->where('name', 'like', "%{$this->cari}%");
+                $q->where('name', 'like', "%{$this->cari}%")
+                ->orWhere('email', 'like', "%{$this->cari}%");
             })->get()
         ]);
     }

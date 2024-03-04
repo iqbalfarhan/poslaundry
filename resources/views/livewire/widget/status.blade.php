@@ -1,6 +1,6 @@
-<div class="card card-compact border-2 w-full h-full" wire:poll.10s="addTime">
+<div class="card card-compact border-2 w-full h-full" wire:poll.10s="increase">
     <div class="card-body text-center space-y-6 justify-evenly">
-        <h3 class="font-bold uppercase">{{ $steps[$step]['title'] }}...</h3>
+        <h3 class="font-bold uppercase">{{ $steps[$step]['title'] }}</h3>
         <img src="{{ url($steps[$step]['illustration']) }}" alt="" class="h-36 mx-auto bg-base-200 p-4 skeleton">
         <div class="text-xs opacity-50">
             {{ $steps[$step]['keterangan'] }}

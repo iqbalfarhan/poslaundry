@@ -16,14 +16,19 @@ class Index extends Component
     public function render()
     {
         $statusList = Transaksi::$statusList;
+
+        $datas = Transaksi::when($this->status, function($t) use ($statusList){
+            $key = array_search($this->status, array_column($statusList, 'as'));
+            $status = array_keys($statusList)[$key];
+            return $t->where('status', $status);
+        })->when($this->cari, function($q){
+            return $q->whereHas('customer', function($w) {
+                 $w->where('name', 'like', "%{$this->cari}%");
+             })->orWhere('kode', 'like', "%{$this->cari}%");
+        })->get();
+
         return view('livewire.pages.transaksi.index', [
-            'datas' => Transaksi::when($this->status, function($t) use ($statusList){
-                $key = array_search($this->status, array_column($statusList, 'as'));
-                $status = array_keys($statusList)[$key];
-                return $t->where('status', $status);
-            })->when($this->cari, function($q){
-                $q->where('kode', 'like', "%{$this->cari}%");
-            })->get(),
+            'datas' => $datas,
             'statuses' => $statusList
         ]);
     }

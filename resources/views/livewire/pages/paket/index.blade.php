@@ -26,7 +26,8 @@
                     <td>Rp. {{ number_format($data->harga, 0, ',', '.') }}</td>
                     <td>{{ $data->satuan }}</td>
                     <td>
-                        <input type="checkbox" class="toggle toggle-primary toggle-sm" @checked($data->show)>
+                        <input type="checkbox" class="toggle toggle-primary toggle-sm"
+                            wire:change="togglePaket({{ $data->id }})" @checked($data->show)>
                     </td>
                     <td>
                         <div class="flex gap-1 justify-center">

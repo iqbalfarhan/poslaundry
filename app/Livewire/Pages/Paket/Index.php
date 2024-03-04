@@ -13,6 +13,16 @@ class Index extends Component
 
     protected $listeners = ['reload' => '$refresh'];
 
+    public function togglePaket(Paket $paket){
+        $old = $paket->show;
+
+        $paket->update([
+            'show' => !$old
+        ]);
+
+        $this->dispatch('reload');
+    }
+
     public function render()
     {
         return view('livewire.pages.paket.index', [

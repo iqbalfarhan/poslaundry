@@ -3,7 +3,7 @@
         <div class="flex gap-1">
             <input type="text" class="input input-bordered" placeholder="Pencarian">
         </div>
-        <button class="btn input-bordered" wire:click="$dispatch('createPengaturan')">
+        <button class="btn input-bordered" wire:click="kembalikanPengaturan">
             <x-tabler-refresh class="icon-5" />
             <span>Reset pengaturan</span>
         </button>

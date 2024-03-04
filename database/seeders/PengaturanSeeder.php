@@ -29,12 +29,18 @@ class PengaturanSeeder extends Seeder
                 'type' => 'tulisan',
                 'value' => "v1.0",
             ],
+            [
+                'key' => 'logo',
+                'type' => 'gambar',
+                'value' => null,
+            ],
         ];
 
         foreach ($datas as $data) {
             Pengaturan::updateOrCreate([
                 'key' => $data['key'],
                 'type' => $data['type'],
+            ],[
                 'value' => $data['value'],
             ]);
         }

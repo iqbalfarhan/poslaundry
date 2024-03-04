@@ -48,4 +48,7 @@
             </div>
         @endforelse
     </div>
+
+    @livewire('pages.transaksi.detail')
+    @livewire('pages.transaksi.show')
 </div>

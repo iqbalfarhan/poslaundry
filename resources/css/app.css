@@ -59,4 +59,8 @@
     .select-bordered {
         @apply border-2;
     }
+
+    .modal {
+        @apply backdrop-blur-sm;
+    }
 }

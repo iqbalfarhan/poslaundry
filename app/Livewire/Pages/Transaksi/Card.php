@@ -8,6 +8,7 @@ use Livewire\Component;
 class Card extends Component
 {
     public Transaksi $transaksi;
+    protected $listeners = ['reload' => '$refresh'];
     public $color;
 
     public function mount(Transaksi $data, $color){
