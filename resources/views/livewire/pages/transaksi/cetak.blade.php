@@ -71,10 +71,10 @@
             <p>Klik cetak resi dan hubungkan ek printer untuk print resi.</p>
 
             <div class="card-actions">
-                <button class="btn btn-primary">
+                <a href="{{ route('resi.print', $transaksi) }}" class="btn btn-primary">
                     <x-tabler-printer class="icon-5" />
                     <span>Cetak resi</span>
-                </button>
+                </a>
             </div>
         </div>
     </div>

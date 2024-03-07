@@ -31,6 +31,8 @@ Route::middleware('auth')->group(function(){
     Route::get('customer', \App\Livewire\Pages\Customer\Index::class)->name('customer.index');
     Route::get('customer/{customer}', \App\Livewire\Pages\Customer\Show::class)->name('customer.show');
 
+    Route::get('resi/{transaksi}/print', [App\Http\Controllers\ResiController::class, 'index'])->name('resi.print');
+
     Route::get('paket', \App\Livewire\Pages\Paket\Index::class)->name('paket.index');
     Route::get('user', \App\Livewire\Pages\User\Index::class)->name('user.index');
     Route::get('setting', \App\Livewire\Pages\Setting\Index::class)->name('setting.index');
