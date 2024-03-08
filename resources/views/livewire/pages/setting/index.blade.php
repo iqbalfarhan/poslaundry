@@ -10,7 +10,7 @@
         </button>
     </div>
     <div class="table-wrapper">
-        <table class="table">
+        <table class="table table-borderless">
             <thead>
                 <td>Nama pengaturan</td>
                 <td>Value</td>

@@ -1,3 +1,1 @@
-# Development todo
-
--   pengelompokan dokumentasi berdasarkan fitur
+# Aplikasi POS Laundry
