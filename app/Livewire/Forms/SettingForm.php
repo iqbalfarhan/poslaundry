@@ -17,7 +17,9 @@ class SettingForm extends Form
         $this->pengaturan = $pengaturan;
         $this->key = $pengaturan->key;
         $this->type = $pengaturan->type;
-        $this->value = $pengaturan->value;
+        if ($pengaturan->type != 'gambar') {
+            $this->value = $pengaturan->value;
+        }
     }
 
     public function store(){

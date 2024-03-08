@@ -13,15 +13,12 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         \App\Models\User::factory()->create([
-            'name' => 'Iqbal Farhan Syuhada',
-            'email' => 'iqbalfarhan1996@gmail.com',
-            'password' => 'adminoke'
+            'name' => 'Administrator',
+            'email' => 'admin@poslaundry.com',
+            'password' => 'password'
         ]);
 
         $this->call([
-            // CustomerSeeder::class,
-            // PaketSeeder::class,
-            // TransaksiSeeder::class,
             PengaturanSeeder::class,
         ]);
 

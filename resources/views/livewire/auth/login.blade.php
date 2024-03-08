@@ -1,5 +1,5 @@
-<form wire:submit="login" class="card-body space-y-4">
-    <h3 class="card-title">Masuk {{ config('app.name') }}</h3>
+<form wire:submit="login" class="card-body space-y-4 max-w-sm">
+    @livewire('partial.applogo')
     <div class="space-y-2">
         <label class="input input-bordered flex items-center gap-2">
             <x-tabler-user class="icon-5" />

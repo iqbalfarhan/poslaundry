@@ -10,14 +10,18 @@
             <div class="space-y-2">
                 <div class="form-control">
                     @if ($form->type == 'tulisan')
-                        <input type="text" class="input input-bordered" wire:model="form.value" placeholder="Value">
+                        <input type="text" class="@error('form.value') input-error @enderror input input-bordered"
+                            wire:model="form.value" placeholder="Value">
                     @elseif ($form->type == 'angka')
-                        <input type="number" class="input input-bordered" wire:model="form.value" placeholder="Value">
+                        <input type="number" class="@error('form.value') input-error @enderror input input-bordered"
+                            wire:model="form.value" placeholder="Value">
                     @elseif ($form->type == 'gambar')
-                        <input type="file" class="file-input file-input-bordered" wire:model="form.value"
-                            placeholder="Value" accept="image/*">
+                        <input type="file"
+                            class="@error('form.value') file-input-error @enderror file-input file-input-bordered"
+                            wire:model="form.value" placeholder="Value" accept="image/*">
                     @elseif ($form->type == 'tulisan panjang')
-                        <textarea class="textarea textarea-bordered w-full" wire:model="form.value" placeholder="Value"></textarea>
+                        <textarea class="@error('form.value') textarea-error @enderror textarea textarea-bordered w-full" rows="5"
+                            wire:model="form.value" placeholder="Value"></textarea>
                     @endif
                 </div>
             </div>

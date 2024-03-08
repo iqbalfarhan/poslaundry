@@ -16,7 +16,7 @@
                 <input type="checkbox" id="drawer" class="drawer-toggle">
                 <div class="drawer-content">
                     @livewire('partial.navbar', [
-                        'title' => $title ?? config('app.name'),
+                        'title' => $title ?? null,
                     ])
                     <div class="page-wrapper">
                         {{ $slot }}

@@ -1,9 +1,6 @@
 <ul class="menu p-4 w-80 min-h-full bg-base-100 text-base-content space-y-4 border-r-2" data-theme="dark">
     <li>
-        <h3 class="text-xl font-bold">
-            <x-tabler-wash-dry-1 />
-            <span>{{ config('app.name') }}</span>
-        </h3>
+        @livewire('partial.applogo')
     </li>
     <li>
         <h3 class="menu-title">Dashboard</h3>

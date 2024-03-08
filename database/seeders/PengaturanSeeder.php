@@ -17,12 +17,12 @@ class PengaturanSeeder extends Seeder
             [
                 'key' => 'nama',
                 'type' => 'tulisan',
-                'value' => 'POS Loundry',
+                'value' => 'POS Laundry',
             ],
             [
                 'key' => 'alamat',
                 'type' => 'tulisan panjang',
-                'value' => 'Alamat: Jl.Rahayu jaya RT.30 No.123S, Balikpapan, Balikpapan barat, Wa : 0812345678890',
+                'value' => 'Jl.Nama jalan RT.00 No.0000, Kota, Kota Barat, WA: 080000000000, E-mail:admin@poslaundry.com',
             ],
             [
                 'key' => 'logo',

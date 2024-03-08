@@ -1,5 +1,16 @@
 <div class="space-y-8">
 
+    @if ($paket == 0)
+        <div role="alert" class="alert alert-warning">
+            <x-tabler-exclamation-circle class="icon-8" />
+            <div>
+                <h3 class="font-bold">Paket laundry belum diisi!</h3>
+                <div class="text-xs">Silakan isi paket laundry terlebih dulu di menu paket laundry.</div>
+            </div>
+            <a href="{{ route('paket.index') }}" class="btn btn-sm btn-ghost">Paket laundry</a>
+        </div>
+    @endif
+
     <div class="grid lg:grid-cols-4 xl:grid-cols-6 gap-6">
         <div class="col-span-2 row-span-2">
             @livewire('widget.pendapatan-bulanan')
